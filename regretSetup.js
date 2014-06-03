@@ -1,6 +1,31 @@
 var regret = require('regret');
 
 var regexes = [
+	// General - Timestamps
+	[
+		'ctime',
+		new RegExp('/\w{3} \w{3} \d{1,2} \d{1,2}:\d{2}:\d{2}/'),
+		'Wed Dec 31 19:00:00.000'
+	],
+
+	[
+		'ctime-pre2.4',
+		new RegExp('/\w{3} \w{3} \d{1,2} \d{1,2}:\d{2}:\d{2}/'),
+		'Wed Dec 31 19:00:00'
+	],
+
+	[
+		'iso8601-local',
+		new RegExp(),
+		'1969-12-31T19:00:00.000+0500'
+	],
+
+	[
+		'iso8601-utc',
+		new RegExp(),
+		'1970-01-01T00:00:00.000Z'
+	],
+
 	[
 		'date',
 	 	new RegExp('/\w{3} \w{3} \d{1,2} \d{1,2}:\d{2}:\d{2}/'),
